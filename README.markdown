@@ -1,6 +1,6 @@
 ﻿# Giteki-Checker
 Do you have Technical Conformity mark is attached to the wireless device you are using?
-![alt text](https://github.com/a-nano/giteki-checker/tree/master/data/rei_giteki.png)
+![alt text](https://github.com/a-nano/giteki-checker/blob/master/data/rei_giteki.png)
 
 ## Usage
 ```common-lisp
