@@ -18,7 +18,7 @@ git clone https://github.com/a-nano/giteki-checker.git
 Start your lisp. Then, just:
 
 ```common-lisp
-(ql:quickload :cl-visa32)
+(ql:quickload :giteki-checker)
 ```
 ## Author
 
