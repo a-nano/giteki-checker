@@ -17,7 +17,6 @@
   :author "Akihide Nano"
   :license "LLGPL"
   :depends-on (:drakma
-               :plump
                :babel
                :cl-ppcre)
   :components ((:module "src"
