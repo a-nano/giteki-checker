@@ -1,12 +1,12 @@
-﻿# Giteki-Checker
+# Giteki-Checker
 Do you have Technical Conformity mark is attached to the wireless device you are using?
 ![alt text](https://github.com/a-nano/giteki-checker/blob/master/data/rei_giteki.png)
 
 ## Usage
 ```common-lisp
 (giteki:check "018-160054")
-=>("ELECOM CO.,LTD. " "第２条第１９号に規定する特定無線設備"
- "M-IR07DR,M-FIR08DR,M-IR07DRS,M-FIR08DRS" "平成28年4月21日")
+=>("ELECOM CO.,LTD. " "��Q���P�X���ɋK�肷����薳���ݔ�"
+ "M-IR07DR,M-FIR08DR,M-IR07DRS,M-FIR08DRS" "����28�N4��21��")
 ```
 ## Installation
 
