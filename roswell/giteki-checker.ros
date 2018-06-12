@@ -1,0 +1,39 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -- $0 "$@"
+|#
+(progn ;;init forms
+  (ros:ensure-asdf)
+  #+quicklisp (ql:quickload '(:uiop :giteki-checker) :silent t)
+  )
+
+(defpackage :ros.script.giteki-checker.3737767382
+  (:use :cl))
+(in-package :ros.script.giteki-checker.3737767382)
+
+(defun help ()
+  (format t "~&Usage:
+    # run program
+    ~A giteki-number
+   
+    giteki-number : number of strings
+
+Options:
+   --help
+       Shows this message.
+"
+	  (read-from-string
+	   (second (assoc "script"
+			  (let ((*read-eval*))
+			    (read-from-string (uiop:getenv "ROS_OPTS")))
+			  :test 'equal)))))
+
+(defun main (&rest argv)
+  (when (or (null argv)
+	    (>= (length argv) 2)
+	    (equal (car argv) "--help"))
+    (help)
+    (uiop:quit -1))
+  (mapc #'print (giteki-checker:check (pop argv))))
+;;; vim: set ft=lisp lisp:
