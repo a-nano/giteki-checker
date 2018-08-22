@@ -24,11 +24,14 @@
 (defun get-data (number)
   (let ((html-body (get-html-string (giteki-url number))))
     (ppcre:all-matches-as-strings
-     "<TD  >(.*)<\/TD>" html-body)))
+     "<TD  >(.*)<\/TD>|<TD  style=\"word-wrap:break-word;\"(.*)<\/TD>" html-body)))
 
 (defun check (number)
   (let ((lst (mapcar #'(lambda (el)
-                         (subseq el 6 (- (length el) 5)))
+			 (cond ((char= (elt el 5) #\>)
+				(subseq el 6 (- (length el) 5)))
+			       (t
+				(subseq el 35 (- (length el) 5)))))
                      (get-data number))))
     (list (car lst) (cadr lst) (caddr lst) (nth 4 lst))))
 
