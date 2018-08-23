@@ -13,8 +13,8 @@
 
 (defun get-html-string (url)
   (multiple-value-bind (body status)
-      (declare (ignorable status))
       (drakma:http-request url :force-binary t)
+    (declare (ignorable status))
     (vector-to-string body)))
 
 (defun giteki-url (number)
