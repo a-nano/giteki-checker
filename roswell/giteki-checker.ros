@@ -20,8 +20,8 @@ exec ros -Q -- $0 "$@"
     giteki-number : number of strings
 
 Options:
-   --help
-       Shows this message.
+  --help
+     Shows this message.
 "
 	  (read-from-string
 	   (second (assoc "script"
